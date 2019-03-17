@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Flag Quiz</string>
+    <string name="guess_the_country">Guess the Country</string>
     <string name="guess_hints">Guess-Hints</string>
     <string name="guess_the_flag">Guess The Flag</string>
     <string name="advanced_level">Advanced Level</string>
-    <string name="guess_the_country">Guess the Country</string>
+
+    <string name="button_submit">Submit</string>
 </resources>
