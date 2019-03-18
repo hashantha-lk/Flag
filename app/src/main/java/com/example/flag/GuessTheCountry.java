@@ -2,13 +2,16 @@ package com.example.flag;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import java.util.Random;
 
-public class GuessTheCountry extends AppCompatActivity {
+public class GuessTheCountry extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +19,7 @@ public class GuessTheCountry extends AppCompatActivity {
         setContentView(R.layout.activity_guess_the_country);
 
         ImageView image_country = (ImageView) findViewById(R.id.image_country);
-        Spinner spinner_country=(Spinner)findViewById(R.id.spinner_country);
+        Spinner spinner_country = (Spinner) findViewById(R.id.spinner_country);
 
         int[] flag_array = {
                 //A
@@ -75,15 +78,72 @@ public class GuessTheCountry extends AppCompatActivity {
                 R.drawable.cyprus,
                 R.drawable.czech_republic,
                 //D
+                R.drawable.democratic_republic_of_the_congo,
+                R.drawable.denmark,
+                R.drawable.djibouti,
+                R.drawable.dominica,
+                R.drawable.dominican_republic,
+                //E
+                R.drawable.ecuador,
+                R.drawable.egypt,
+                R.drawable.el_salvador,
+                R.drawable.equatorial_guinea,
+                R.drawable.eritrea,
+                R.drawable.estonia,
+                R.drawable.ethiopia,
+                //F
+                R.drawable.falkland_islands,
+                R.drawable.faroe_islands,
+                R.drawable.fiji,
+                R.drawable.finland,
+                R.drawable.france,
+                R.drawable.french_polynesia,
+                //G
+                R.drawable.gabon,
+                R.drawable.gambia,
+                R.drawable.georgia,
+                R.drawable.germany,
+                R.drawable.ghana,
+                R.drawable.gibraltar,
+                R.drawable.greece,
+                R.drawable.greenland,
+                R.drawable.grenada,
+                R.drawable.guam,
+                R.drawable.guatemala,
+                R.drawable.guinea_bissau,
+                R.drawable.guinea,
+                R.drawable.guyana,
+                //H
+                R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
+                        R.drawable.
 
         };
 
         Random randomFlagGenerator = new Random();
         int number = randomFlagGenerator.nextInt(54);
-
         image_country.setImageResource(flag_array[number]);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.country_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_country.setAdapter(adapter);
+        spinner_country.setOnItemSelectedListener(this);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
     }
 
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
