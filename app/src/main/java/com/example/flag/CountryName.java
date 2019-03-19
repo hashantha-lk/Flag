@@ -2,7 +2,7 @@ package com.example.flag;
 
 public class CountryName {
 
-    String[] country_array = {
+    String[] country_array = new String[]{
             "Andorra",
             "United Arab Emirates",
             "Afghanistan",

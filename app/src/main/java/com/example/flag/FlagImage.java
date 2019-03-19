@@ -2,7 +2,7 @@ package com.example.flag;
 
 public class FlagImage {
 
-    int[] flag_array = {
+    int[] flag_array = new int[]{
             R.drawable.ad,
             R.drawable.ae,
             R.drawable.af,
