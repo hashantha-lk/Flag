@@ -21,23 +21,34 @@ public class GuessTheCountry extends AppCompatActivity {
 
         //Creating usable objects.
         FlagImage flag = new FlagImage();
-        CountryName country = new CountryName();
+        final CountryName country = new CountryName();
         ImageView image_country = (ImageView) findViewById(R.id.image_country);
         final Spinner spinner_country = (Spinner) findViewById(R.id.spinner_country);
 
         //Random object used to randomize the image displayed each and every time.
         Random randomFlagGenerator = new Random();
-        int number = randomFlagGenerator.nextInt(256);
+        final int number = randomFlagGenerator.nextInt(256);
         image_country.setImageResource(flag.flag_array[number]);
 
         //ArrayAdapter used to add items to the spinner.
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(GuessTheCountry.this, android.R.layout.simple_spinner_dropdown_item, country.country_array);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(GuessTheCountry.this, android.R.layout.simple_spinner_dropdown_item, country.country_array);
         spinner_country.setAdapter(adapter);
 
+        //On item selected listener to get user's selection.
         spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GuessTheCountry.this, spinner_country.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+
+                int x = spinner_country.getSelectedItemPosition();
+                int y = number;
+
+                if (x == y) {
+
+                    Toast.makeText(GuessTheCountry.this, spinner_country.getSelectedItem().toString() + " is correct !", Toast.LENGTH_LONG).show();
+
+                } else {
+                    Toast.makeText(GuessTheCountry.this, spinner_country.getSelectedItem().toString() + " is wrong !", Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
