@@ -53,7 +53,7 @@ public class GuessTheCountry extends AppCompatActivity {
                             Toast.makeText(GuessTheCountry.this, "Correct !", Toast.LENGTH_SHORT).show();
 
                         } else {
-                            Toast.makeText(GuessTheCountry.this, "Wrong !\n\n"+country.country_array[number], Toast.LENGTH_LONG).show();
+                            Toast.makeText(GuessTheCountry.this, "Wrong !\n\n" + country.country_array[number], Toast.LENGTH_LONG).show();
                         }
                     }
                 });
