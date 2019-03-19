@@ -6,12 +6,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import java.util.Random;
 
 public class GuessTheCountry extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    FlagImage flag = new FlagImage();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,11 @@ public class GuessTheCountry extends AppCompatActivity implements AdapterView.On
 
         ImageView image_country = (ImageView) findViewById(R.id.image_country);
         Spinner spinner_country = (Spinner) findViewById(R.id.spinner_country);
-        FlagArray array = new FlagArray();
+
 
         Random randomFlagGenerator = new Random();
         int number = randomFlagGenerator.nextInt(54);
-        image_country.setImageResource(array.flag_array[number]);
+        image_country.setImageResource(flag.flag_array[number]);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.country_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

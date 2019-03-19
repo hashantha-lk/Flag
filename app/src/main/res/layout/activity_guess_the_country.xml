@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/afghanistan" />
+        app:srcCompat="@drawable/ad" />
 
     <Button
         android:id="@+id/button_submit"
