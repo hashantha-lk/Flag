@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class GuessTheCountry extends AppCompatActivity {
         final CountryName country = new CountryName();
         ImageView image_country = (ImageView) findViewById(R.id.image_country);
         final Spinner spinner_country = (Spinner) findViewById(R.id.spinner_country);
+        final Button submit = (Button) findViewById(R.id.button_submit);
 
         //Random object used to randomize the image displayed each and every time.
         Random randomFlagGenerator = new Random();
@@ -39,16 +41,23 @@ public class GuessTheCountry extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                int x = spinner_country.getSelectedItemPosition();
-                int y = number;
 
-                if (x == y) {
+                //On click method.
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String country_name = spinner_country.getSelectedItem().toString();
+                        int country_index = spinner_country.getSelectedItemPosition();
+                        int flag_index = number;
 
-                    Toast.makeText(GuessTheCountry.this, spinner_country.getSelectedItem().toString() + " is correct !", Toast.LENGTH_LONG).show();
+                        if (country_index == flag_index) {
+                            Toast.makeText(GuessTheCountry.this, "Correct !", Toast.LENGTH_SHORT).show();
 
-                } else {
-                    Toast.makeText(GuessTheCountry.this, spinner_country.getSelectedItem().toString() + " is wrong !", Toast.LENGTH_LONG).show();
-                }
+                        } else {
+                            Toast.makeText(GuessTheCountry.this, "Wrong !\n\n"+country.country_array[number], Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
 
             @Override
@@ -56,5 +65,6 @@ public class GuessTheCountry extends AppCompatActivity {
 
             }
         });
+
     }
 }
