@@ -27,7 +27,7 @@ public class GuessTheCountry extends AppCompatActivity {
         final Spinner spinner_country = (Spinner) findViewById(R.id.spinner_country);
         final Button submit = (Button) findViewById(R.id.button_submit);
 
-        //Random object used to randomize the image displayed each and every time.
+        //Random method used to randomize the flag image.
         Random randomFlagGenerator = new Random();
         final int number = randomFlagGenerator.nextInt(256);
         image_country.setImageResource(flag.flag_array[number]);
