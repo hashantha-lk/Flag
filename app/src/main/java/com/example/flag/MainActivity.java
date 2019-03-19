@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         guesstheCountry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),GuessTheCountry.class);
+                Intent intent = new Intent(getApplicationContext(), GuessTheCountry.class);
                 startActivity(intent);
             }
         });

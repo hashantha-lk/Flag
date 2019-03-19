@@ -5,4 +5,6 @@
     <string name="guess_the_flag">Guess The Flag</string>
     <string name="advanced_level">Advanced Level</string>
     <string name="button_submit">Submit</string>
+    <string name="textView_status" />
+    <string name="textView_correct_country" />
 </resources>
