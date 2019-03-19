@@ -46,7 +46,6 @@ public class GuessTheCountry extends AppCompatActivity {
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String country_name = spinner_country.getSelectedItem().toString();
                         int country_index = spinner_country.getSelectedItemPosition();
                         int flag_index = number;
 
