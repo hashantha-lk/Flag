@@ -1,6 +1,7 @@
 package com.example.flag;
 
 public class FlagImage {
+
     int[] flag_array = {
             R.drawable.ad,
             R.drawable.ae,
