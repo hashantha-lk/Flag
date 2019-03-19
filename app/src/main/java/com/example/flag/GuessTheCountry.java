@@ -24,7 +24,7 @@ public class GuessTheCountry extends AppCompatActivity implements AdapterView.On
 
 
         Random randomFlagGenerator = new Random();
-        int number = randomFlagGenerator.nextInt(54);
+        int number = randomFlagGenerator.nextInt(256);
         image_country.setImageResource(flag.flag_array[number]);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.country_array, android.R.layout.simple_spinner_item);
