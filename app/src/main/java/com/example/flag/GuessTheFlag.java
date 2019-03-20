@@ -27,11 +27,11 @@ public class GuessTheFlag extends AppCompatActivity {
         Button btn = (Button) findViewById(R.id.button_submit1);
 
         //Random method used to randomize the flag button image.
-        Random randomflag = new Random();
+        Random randomFlag = new Random();
 
-        int num1 = randomflag.nextInt(256);
-        int num2 = randomflag.nextInt(256);
-        int num3 = randomflag.nextInt(256);
+        int num1 = randomFlag.nextInt(256);
+        int num2 = randomFlag.nextInt(256);
+        int num3 = randomFlag.nextInt(256);
 
         if (num1 != num2 && num1 == num3 && num2 == num3 && num3 == num1) {
 
@@ -40,5 +40,10 @@ public class GuessTheFlag extends AppCompatActivity {
             flag2.setImageResource(flag.flag_array[num2]);
             flag3.setImageResource(flag.flag_array[num3]);
         }
+        int[] countryIndex = {num1, num2, num3};
+        Random randomCountry = new Random();
+        int flagIndex = randomCountry.nextInt(3);
+        flag_name.setText(country.country_array[3]);
+
     }
 }
