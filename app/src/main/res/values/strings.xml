@@ -7,4 +7,10 @@
     <string name="button_submit">Submit</string>
     <string name="textView_status" />
     <string name="textView_correct_country" />
+    <string name="textView_flag_name" />
+    <string name="textView_status1" />
+    <string name="textView_correct_country1" />
+    <string name="button_submit1">Submit</string>
+
+
 </resources>
