@@ -37,7 +37,7 @@ public class GuessTheFlag extends AppCompatActivity {
         final int num3 = randomFlag.nextInt(256);
 
         //Validatint not to repeat the same flag twice or thrice.
-        if (num1 != num2 && num1 == num3 && num2 == num3 && num3 == num1) {
+        if (num1 == num2 && num1 == num3 && num2 == num3 && num3 == num1) {
 
         } else {
             flag1.setImageResource(flag.flag_array[num1]);
@@ -49,7 +49,7 @@ public class GuessTheFlag extends AppCompatActivity {
         int[] countryIndex = {num1, num2, num3};
         Random randomCountry = new Random();
         int flagIndex = randomCountry.nextInt(3);
-        flag_name.setText(country.country_array[3]);
+        flag_name.setText(country.country_array[flagIndex]);
 
         //Selection part.
         if (num1 == flagIndex) {
