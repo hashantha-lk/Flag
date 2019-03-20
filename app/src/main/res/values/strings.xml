@@ -10,7 +10,5 @@
     <string name="textView_flag_name" />
     <string name="textView_status1" />
     <string name="textView_correct_country1" />
-    <string name="button_submit1">Submit</string>
-
-
+    <string name="button_next">Next</string>
 </resources>

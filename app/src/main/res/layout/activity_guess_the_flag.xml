@@ -76,6 +76,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/textView_status1"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +90,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/textView_correct_country1"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -96,11 +100,11 @@
         app:layout_constraintVertical_bias="0.14" />
 
     <Button
-        android:id="@+id/button_submit1"
+        android:id="@+id/button_next"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/button_submit1"
+        android:text="@string/button_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
