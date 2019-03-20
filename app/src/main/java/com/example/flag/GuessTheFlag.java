@@ -37,7 +37,7 @@ public class GuessTheFlag extends AppCompatActivity {
         final int num3 = randomFlag.nextInt(256);
 
         //Validatint not to repeat the same flag twice or thrice.
-        if (num1 == num2 && num1 == num3 && num2 == num3 && num3 == num1) {
+        if (num1 == num2 && num1 == num3 && num2 == num3) {
 
         } else {
             flag1.setImageResource(flag.flag_array[num1]);
@@ -48,11 +48,12 @@ public class GuessTheFlag extends AppCompatActivity {
         //Randomizing the country names in the image buttons to display in top text view flag_name.
         int[] countryIndex = {num1, num2, num3};
         Random randomCountry = new Random();
-        int flagIndex = randomCountry.nextInt(3);
-        flag_name.setText(country.country_array[flagIndex]);
+        final int flagIndex = randomCountry.nextInt(3);
+        int i = countryIndex[flagIndex];
+        flag_name.setText(country.country_array[i]);
 
         //Selection part.
-        if (num1 == flagIndex) {
+        if (num1 == i) {
             flag1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -89,7 +90,7 @@ public class GuessTheFlag extends AppCompatActivity {
             });
 
         }
-        if (num2 == flagIndex) {
+        if (num2 == i) {
             flag2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -126,7 +127,7 @@ public class GuessTheFlag extends AppCompatActivity {
             });
 
         }
-        if (num3 == flagIndex) {
+        if (num3 == i) {
             flag3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
